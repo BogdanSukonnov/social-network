@@ -1,2 +1,3 @@
-# social-network
+# Social network
+
 Training project with Struts
