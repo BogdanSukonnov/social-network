@@ -1,13 +1,11 @@
-package com.bogdansukonnov.dao;
+package com.bogdansukonnov.socialnetwork.dao;
 
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.query.Query;
-
-import com.bogdansukonnov.model.User;
+import com.bogdansukonnov.socialnetwork.model.User;
 
 public class UserDAO {
 	

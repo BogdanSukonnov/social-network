@@ -25,7 +25,7 @@
 			RootMySql7!
 		</property>
 		
-		<mapping class = "com.bogdansukonnov.model.User" />
+		<mapping class = "com.bogdansukonnov.socialnetwork.model.User" />
 		
 	</session-factory>
 </hibernate-configuration>

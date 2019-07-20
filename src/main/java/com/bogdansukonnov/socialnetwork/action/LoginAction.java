@@ -1,17 +1,21 @@
 package com.bogdansukonnov.socialnetwork.action;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.bogdansukonnov.dao.UserDAO;
-import com.bogdansukonnov.model.User;
+import com.bogdansukonnov.socialnetwork.dao.UserDAO;
+import com.bogdansukonnov.socialnetwork.model.User;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport {
 	
-	private User user;
+	private static final long serialVersionUID = 1L;
 	
+	private User user;
+	private Map<String, Object> userSession;
+	 
 	@Override	
 	public void validate() {
 				
@@ -34,6 +38,8 @@ public class LoginAction extends ActionSupport {
 		}
 		
 		this.user = users.get(0);
+		userSession.put("user", this.user);
+		dao.close();
 		
 	}
 	
@@ -53,4 +59,13 @@ public class LoginAction extends ActionSupport {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public Map<String, Object> getUserSession() {
+		return userSession;
+	}
+
+	public void setUserSession(Map<String, Object> userSession) {
+		this.userSession = userSession;
+	}	
+	
 }

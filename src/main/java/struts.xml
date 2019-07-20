@@ -3,10 +3,16 @@
 		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
 		"http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-	<package name="AccountSystem" extends = "struts-default">
-		<action name = "login" class = "com.bogdansukonnov.socialnetwork.action.LoginAction">
-			<result name = "success">/loginSuccess.jsp</result>
-			<result name = "input">/index.jsp</result>
+	<package name="AccountSystem" extends="struts-default">
+		<action name="login"
+			class="com.bogdansukonnov.socialnetwork.action.LoginAction">
+			<result name="success">/loginSuccess.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="register"
+			class="com.bogdansukonnov.socialnetwork.action.RegisterAction">
+			<result name="success">/index.jsp</result>
+			<result name="input">/register.jsp</result>
 		</action>
 	</package>
 </struts>

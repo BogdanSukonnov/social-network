@@ -1,4 +1,4 @@
-package com.bogdansukonnov.model;
+package com.bogdansukonnov.socialnetwork.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
