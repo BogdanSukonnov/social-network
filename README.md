@@ -1,3 +1,9 @@
 # Social network
 
-Training project with Struts
+Training project with Struts, Hibernate
+
+
+
+- Register
+- Login
+- Add friends

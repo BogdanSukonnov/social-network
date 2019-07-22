@@ -25,7 +25,11 @@
 			RootMySql7!
 		</property>
 		
-		<mapping class = "com.bogdansukonnov.socialnetwork.model.User" />
+		<property name="hibernate.enable_lazy_load_no_trans">
+			true
+		</property>
+						
+		<mapping class = "com.bogdansukonnov.socialnetwork.model.User"></mapping>
 		
 	</session-factory>
 </hibernate-configuration>

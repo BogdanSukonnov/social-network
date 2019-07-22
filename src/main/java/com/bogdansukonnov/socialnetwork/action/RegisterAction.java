@@ -1,15 +1,28 @@
 package com.bogdansukonnov.socialnetwork.action;
 
+import java.util.Map;
+
 import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.bogdansukonnov.socialnetwork.dao.UserDAO;
 import com.bogdansukonnov.socialnetwork.model.User;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class RegisterAction extends ActionSupport {
+public class RegisterAction extends ActionSupport implements SessionAware {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private User user;
-	
+	private Map<String, Object> userSession;	
+
+	public Map<String, Object> getUserSession() {
+		return userSession;
+	}
+
+	public void setUserSession(Map<String, Object> userSession) {
+		this.userSession = userSession;
+	}
 
 	@Override
 	public void validate() {
@@ -47,5 +60,10 @@ public class RegisterAction extends ActionSupport {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.userSession = session;		
 	}
 }

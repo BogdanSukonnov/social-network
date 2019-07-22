@@ -4,12 +4,13 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.bogdansukonnov.socialnetwork.dao.UserDAO;
 import com.bogdansukonnov.socialnetwork.model.User;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginAction extends ActionSupport {
+public class LoginAction extends ActionSupport implements SessionAware {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -39,15 +40,13 @@ public class LoginAction extends ActionSupport {
 		
 		this.user = users.get(0);
 		userSession.put("user", this.user);
-		dao.close();
+		
+		dao.close();				
 		
 	}
 	
 	@Override
 	public String execute() {
-		System.out.println(user.getUserName());
-		System.out.println(user.getPassword());
-		
 		return SUCCESS;
 	}
 
@@ -66,6 +65,11 @@ public class LoginAction extends ActionSupport {
 
 	public void setUserSession(Map<String, Object> userSession) {
 		this.userSession = userSession;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.userSession = session;		
 	}	
 	
 }

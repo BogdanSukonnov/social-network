@@ -24,10 +24,16 @@ public class UserDAO {
 	}
 	
 	public List<User> getUserByName(String name) {
-		List users= session.
+		List users = session.
 				createQuery("from User where userName = :name").
 				setParameter("name", name).list();
 		return users;
+	}
+	
+	public void update(User user) {
+		session.beginTransaction();
+		session.update(user);
+		session.getTransaction().commit();
 	}
 	
 	public void close() {
